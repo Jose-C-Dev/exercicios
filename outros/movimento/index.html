@@ -44,9 +44,14 @@
 
       distance = distance + velocity
 
-      if (distance >= (window.innerWidth / 2)) {
+      if (distance >= (window.innerWidth / 4)) {
         velocity = -velocity
       }
+
+      if (distance <= 0) {
+        velocity = -velocity
+      }
+      console.log(velocity);
 
       image.style = `position: absolute; left: ${distance}px`
     }, 300)

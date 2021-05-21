@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador</title>
+
+  <style>
+
+    h1 {
+      text-align: center;
+      font-size: 100px;
+    }
+
+    body {
+      background-color: darkgrey;
+    }
+
+    #counter {
+      text-align: center;
+      font-size: 100px;
+    }
+
+    #buttons {
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <h1>Contador</h1>
+
+  <div id='counter'> </div>
+
+  <br>
+
+  <div id='buttons'>
+  
+    <button onclick="start()">Start/Stop</button>
+
+    <button onclick="restart()">Restart</button>
+  
+  </div>
+
+  <script>
+
+    const counter = document.getElementById('counter');
+
+    let seconds = 0;
+
+    function addSeconds() {
+        seconds += 1;
+        counter.innerText = seconds
+    }
+
+    setInterval(addSeconds, 1000);
+
+
+    function restart() {
+      seconds = 0
+    }
+
+
+  </script>
+
+
+
+
+</body>
+</html>

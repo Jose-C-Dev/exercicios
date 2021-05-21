@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cor de Fundo</title>
+
+  <style>
+      
+    h1 {
+      text-align: center;
+      font-size: 100px;
+    }
+
+    #rgbinputs {
+      text-align: center;
+
+    }
+
+
+    input {
+      text-align: center;
+    }
+
+  </style>
+
+
+</head>
+
+<body>
+
+  <h1>Cor de Fundo</h1>
+  
+  <div id='rgbinputs'>
+    
+    <label
+      for="red">
+      Red:
+    </label>
+  
+    <input
+      type="number" 
+      id="red" 
+      name="red" 
+      placeholder="Red" value="255" min="0" max="255">
+
+    <label
+      for="green">
+      Green:
+    </label>
+  
+    <input
+      type="number" 
+      id="green" 
+      name="green" 
+      placeholder="Green" value="255" min="0" max="255">
+
+    <label
+      for="blue">
+      Blue:
+    </label>
+  
+    <input
+      type="number" 
+      id="blue" 
+      name="blue" 
+      placeholder="Blue" value="255"  min="0" max="255">
+
+  </div>
+  
+  <script>
+    
+    function change() {
+      
+      var red = document.getElementById('red').value
+      var green = document.getElementById('green').value
+      var blue = document.getElementById('blue').value
+
+      var colour = 'rgb(' + red + ',' + green + ',' + blue + ')'
+      
+      document.body.style.backgroundColor = colour;
+
+    }
+
+    document.getElementById('red').addEventListener('input', change);
+    document.getElementById('green').addEventListener('input', change);
+    document.getElementById('blue').addEventListener('input', change);
+
+  </script>
+
+</body>
+</html>
