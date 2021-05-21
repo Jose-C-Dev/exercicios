@@ -18,7 +18,6 @@
 
     }
 
-
     input {
       text-align: center;
     }
@@ -43,7 +42,7 @@
       type="number" 
       id="red" 
       name="red" 
-      placeholder="Red" value="255" min="0" max="255">
+      placeholder="Red" min="0" max="255">
 
     <label
       for="green">
@@ -54,7 +53,7 @@
       type="number" 
       id="green" 
       name="green" 
-      placeholder="Green" value="255" min="0" max="255">
+      placeholder="Green" min="0" max="255">
 
     <label
       for="blue">
@@ -65,7 +64,7 @@
       type="number" 
       id="blue" 
       name="blue" 
-      placeholder="Blue" value="255"  min="0" max="255">
+      placeholder="Blue" min="0" max="255">
 
   </div>
   
@@ -73,19 +72,17 @@
     
     function change() {
       
-      var red = document.getElementById('red').value
-      var green = document.getElementById('green').value
-      var blue = document.getElementById('blue').value
+      var red = document.getElementById('red').value || 255
+      var green = document.getElementById('green').value || 255
+      var blue = document.getElementById('blue').value || 255
 
       var colour = 'rgb(' + red + ',' + green + ',' + blue + ')'
       
       document.body.style.backgroundColor = colour;
-
+    
     }
 
-    document.getElementById('red').addEventListener('input', change);
-    document.getElementById('green').addEventListener('input', change);
-    document.getElementById('blue').addEventListener('input', change);
+    document.addEventListener('input', change);
 
   </script>
 
